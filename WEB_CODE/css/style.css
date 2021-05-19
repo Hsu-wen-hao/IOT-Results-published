@@ -1,0 +1,208 @@
+body
+{
+  padding:0px;
+  margin: 0px;
+  background-color: #ffffff;
+  width:100%;
+  height:100vh;
+}
+.livingroom{
+  position: absolute;
+  top:0%;
+  right: 0;
+  left: 0;
+  height:30%;
+  /* background:url(image/living_room.jpg)center center no-repeat; */
+  background:url(https://images.wallpaperscraft.com/image/interior_design_living_room_furniture_dining_room_97895_1920x1080.jpg)center center no-repeat;
+  background-size: cover;
+}
+.bedroom{
+  position: absolute;
+  top:30%;
+  right: 0;
+  left: 0;
+  height:30%;
+  /* background:url(image/bed_room.jpg)center center no-repeat; */
+  background:url(https://i.pinimg.com/originals/bf/1f/db/bf1fdb1da8039187fbf70bd539909747.jpg)center center no-repeat;
+  background-size: cover;
+}
+.bathroom{
+  position: absolute;
+  top:60%;
+  right: 0;
+  left: 0;
+  height:30%;
+  /* background:url(image/bath_room.png)center center no-repeat; */
+  background:url(https://images.wallpaperscraft.com/image/bathroom_light_furniture_76221_1280x720.jpg)center center no-repeat;
+  background-size: cover;
+}
+
+form
+{
+  text-align: center;
+}
+
+[id^=message_box]
+{
+  font-size: 24px;
+  height: 150px;
+}
+/*-----------------------button ---------------------------*/                
+.livingroom_button{
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%, -50%);
+width: fit-content;
+height:auto;
+}
+.bedroom_button{
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%, -50%);
+width: fit-content;
+height:auto;
+}
+.bathroom_button{
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%, -50%);
+width: fit-content;
+height:auto;
+}
+
+button{
+width:200px;
+background: linear-gradient(to left top, #e7e7e7 50%, #dfdfdf 50%);
+border-style: none;
+color:rgb(68, 68, 68);
+font-size: 30px;
+letter-spacing: 5px;
+margin:5px;
+font-family: 'Lato';
+font-weight: 600;
+outline: none;
+cursor: pointer;
+position: relative;
+padding: 0px;
+overflow: hidden;
+transition: all .5s;
+box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+}
+button:hover{
+transition: all .5s;
+transform: rotate(1deg) scale(1.1);
+box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+}
+button:hover span{
+  animation-play-state: paused;
+}
+
+button:active{
+transition: all .05s;/*變身!*/
+transform: rotate(0deg) scale(0.8);
+box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+}
+/*----------------------------- label -----------------------------------*/
+label{
+  color:rgb(0, 0, 0);
+  font-size: 25px;
+  letter-spacing: 3px; /*字間寬度*/
+  font-family: 'Lato';
+  font-weight: 600;/*字體寬度*/
+  /* outline: none;*//*外框限*/  
+  /* cursor: pointer; *//*可點擊*/
+}
+.label{
+  margin-top: 10px;
+}
+/*------------------------ footer --------------------------*/        
+footer {
+background-color: #222;
+color: #fff;
+font-size: 14px;
+bottom: 0;
+position: fixed;
+left: 0;
+right: 0;
+text-align: center;
+z-index: 999;
+}
+
+footer p {
+margin: 10px 0;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida  Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+footer .fa-heart{
+color: red;
+}
+footer .fa-dev{
+color: #fff;
+}
+footer .fa-codepen{
+color:#fff
+}
+footer a {
+color: #3c97bf;
+text-decoration: none;
+margin-right:5px;
+}
+/*----------------------- youtubeLink --------------------------*/        
+.youtubeBtn{
+position: fixed;
+left: 50%;
+transform:translatex(-50%);
+bottom: 45px;
+cursor: pointer;
+transition: all .3s;
+vertical-align: middle;
+text-align: center;
+display: inline-block;
+}
+.youtubeBtn i{
+font-size:20px;
+float:left;
+}
+.youtubeBtn a{
+color:#ff0000;
+text-shadow: 0px 2px 5px rgba(0,0,0,.5);
+animation: youtubeAnim 1000ms linear infinite;
+float:right;
+}
+.youtubeBtn a:hover{
+color:#c9110f;
+transition:all .3s ease-in-out;
+text-shadow: none;
+}
+.youtubeBtn i:active{
+transform:scale(.9);
+transition:all .3s ease-in-out;
+}
+.youtubeBtn span{
+font-family: 'Lato';
+font-weight: bold;
+color: rgb(185, 185, 185);
+display: block;
+font-size: 12px;
+float: right;
+line-height: 20px;
+padding-left: 5px;
+}
+
+.main-hr {
+width: 60%;
+border: none;
+border-top: 1px solid #c3c3c3;
+}
+
+@keyframes youtubeAnim{
+0%,100%{
+color:#c9110f;
+}
+50%{
+color:#ff0000;
+}
+}
+/* footer  */

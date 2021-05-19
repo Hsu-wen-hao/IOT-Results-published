@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="Shortcut Icon" type="image/x-ico" href="image/light.ico"> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>homePage</title>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <form id="form01" action="" method="GET"> 
+        <div class="livingroom">
+          <div class="label"><label>Device_001</label></div>
+          <div class="col-lg-1 col-4">
+            <div class="livingroom_button">
+              <button type="button" class="btn btn-lg btn-outline-info" name="dn1_insert_button_on" id="dn1_insert_button_on" >on
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+              
+
+              <button type="button" class="btn btn-lg btn-outline-info" name="dn1_insert_button_off" id="dn1_insert_button_off" >off
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bedroom">
+          <div class="label"><label>Device_002</label></div>
+          <div class="col-lg-1 col-4">
+            <div class="bedroom_button">
+              <button type="button" class="btn btn-lg btn-outline-info" name="dn2_insert_button_on" id="dn2_insert_button_on" >on
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+              
+              <button type="button" class="btn btn-lg btn-outline-info" name="dn2_insert_button_off" id="dn2_insert_button_off">off
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bathroom">
+          <div class="label"><label>Device_003</label></div>
+          <div class="col-lg-1 col-4">
+              <div class="bathroom_button">
+                <button type="button" class="btn btn-lg btn-outline-info" name="dn3_insert_button_on" id="dn3_insert_button_on" >on
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+    
+                <button type="button" class="btn btn-lg btn-outline-info" name="dn3_insert_button_off" id="dn3_insert_button_off">off
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+          </div>
+        </div>
+        <!-- <div id="message_box03"></div> -->
+
+      </form>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script> -->
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      dn1_insert_button_on.addEventListener('click', handling_action);
+      dn1_insert_button_off.addEventListener('click', handling_action);
+      dn2_insert_button_on.addEventListener('click', handling_action);
+      dn2_insert_button_off.addEventListener('click', handling_action);
+      dn3_insert_button_on.addEventListener('click', handling_action);
+      dn3_insert_button_off.addEventListener('click', handling_action);
+
+      function handling_action(event)
+      {
+        var action_file = '';
+
+        switch (event.target)
+        {
+          case dn1_insert_button_on:
+            action_file = '/api/test03.php';
+            break;
+
+          case dn1_insert_button_off:
+            action_file = '/api/test03.php';
+            break;
+          
+          case dn2_insert_button_on:
+            action_file = '/api/test03.php';
+            break;
+          
+          case dn2_insert_button_off:
+            action_file = '/api/test03.php';
+            break;
+          
+          case dn3_insert_button_on:
+            action_file = '/api/test03.php';
+            break;
+          
+          case dn3_insert_button_off:
+            action_file = '/api/test03.php';
+            break;
+        }
+
+        var xhttp = new XMLHttpRequest();
+
+        // xhttp.onreadystatechange = function()
+        // {
+        //   if (this.readyState == 4 && this.status == 200)
+        //   {
+        //     message_box03.innerHTML = this.responseText;
+        //   }
+        // };
+        /*---------------------- device_001 ------------------------------*/
+        // document.getElementById('dn1_insert_button_on').onclick = function () {
+        //   xhttp.open("GET", `${action_file}?current_state=a&device_name=Device_001`, true);//資料庫欄位抓到的值"on"
+        //   xhttp.send();
+        //   document.getElementById('dn1_insert_button_off').disabled = false;
+        //   document.getElementById('dn1_insert_button_on').disabled = true;
+        // }
+        document.getElementById('dn1_insert_button_on').onclick = function (){
+            xhttp.open("GET", `${action_file}?current_state=a&device_name=Device_001`, true);//資料庫欄位抓到的值"on"
+            xhttp.send();
+            document.getElementById('dn1_insert_button_off').disabled = false;
+            document.getElementById('dn1_insert_button_on').disabled = true;
+            return true;
+        }
+        document.getElementById('dn1_insert_button_off').onclick = function (){
+          xhttp.open("GET", `${action_file}?current_state=b&device_name=Device_001`, true);//資料庫欄位抓到的值"off"
+          xhttp.send();
+          document.getElementById('dn1_insert_button_on').disabled = false;
+          document.getElementById('dn1_insert_button_off').disabled = true;
+        }
+
+        /*---------------------- device_002 ------------------------------*/
+        document.getElementById('dn2_insert_button_on').onclick = function () {
+          xhttp.open("GET", `${action_file}?current_state=a&device_name=Device_002`, true);//資料庫欄位抓到的值"on"
+          xhttp.send();
+          document.getElementById('dn2_insert_button_off').disabled = false;
+          document.getElementById('dn2_insert_button_on').disabled = true;
+        }
+        
+        document.getElementById('dn2_insert_button_off').onclick = function (){
+          xhttp.open("GET", `${action_file}?current_state=b&device_name=Device_002`, true);//資料庫欄位抓到的值"off"
+          xhttp.send();
+          document.getElementById('dn2_insert_button_on').disabled = false;
+          document.getElementById('dn2_insert_button_off').disabled = true;
+        }
+
+        /*---------------------- device_003 ------------------------------*/
+        document.getElementById('dn3_insert_button_on').onclick = function () {
+          xhttp.open("GET", `${action_file}?current_state=a&device_name=Device_003`, true);//資料庫欄位抓到的值"on"
+          xhttp.send();
+          document.getElementById('dn3_insert_button_off').disabled = false;
+          document.getElementById('dn3_insert_button_on').disabled = true;
+        }
+        
+        document.getElementById('dn3_insert_button_off').onclick = function (){
+          xhttp.open("GET", `${action_file}?current_state=b&device_name=Device_003`, true);//資料庫欄位抓到的值"off"
+          xhttp.send();
+          document.getElementById('dn3_insert_button_on').disabled = false;
+          document.getElementById('dn3_insert_button_off').disabled = true;
+        }
+      }
+    </script>
+
+    <footer>
+      <p>
+        Ultrasound State：people
+        <!-- <a target="_blank" href="https://codepen.io/ahmadbassamemran/">ABCD告嘎低</a> -->
+      </p>
+    </footer>
+
+    <div class="youtubeBtn">
+      <a target="_blank" href="https://www.youtube.com/AhmadEmran?sub_confirmation=1">
+        <span>Watch on YouTube</span>
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </body>
+</html>

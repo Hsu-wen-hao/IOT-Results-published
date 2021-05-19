@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="Shortcut Icon" type="image/x-ico" href="image/loading.ico"> 
+
+    <title>loadingPage</title>
+    <style>
+      body {
+        background-color: rgb(90, 90, 90);
+      }
+      .loading{
+        position: absolute;
+        height: 98%;
+        width: 98%;
+        background: url('image/loading.gif');
+        background-repeat: no-repeat;
+        background-position:50% 50%;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading"></div>
+    <script>
+      // 直接跳轉
+      // window.location.href='test03.html';
+      // 定時跳轉
+      setTimeout("javascript:location.href='homePage.html'", 5000);
+    </script>
+  </body>
+</html>
