@@ -14,7 +14,7 @@
   ---------------------
   protocol: MQTT、UDP、SOCKET
   --------------------------
-  Device: raspberry pi3、servo
+  Device: raspberry pi3、servo、ESP-8266
   --------------------------
 [Test Viodeo](https://www.youtube.com/watch?v=i6Ut69lKOhA "Title")
 
